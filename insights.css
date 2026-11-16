@@ -1,0 +1,27 @@
+:root { --ins-ink: #05050a; --ins-violet: #8b5cf6; --ins-blue: #3b82f6; --ins-lavender: #a78bfa; }
+body { overflow-x: hidden; }
+.ins-grid { background-image: linear-gradient(to right, rgba(139, 92, 246, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(139, 92, 246, 0.05) 1px, transparent 1px); background-size: 40px 40px; }
+.ins-gradient-text { background: linear-gradient(90deg, #8b78e6 0%, #a78bfa 40%, #60a5fa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.ins-pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; border: 1px solid rgba(255, 255, 255, 0.12); background: rgba(255, 255, 255, 0.04); color: rgba(255, 255, 255, 0.7); transition: all 0.25s ease; cursor: pointer; user-select: none; }
+.ins-pill:hover { border-color: rgba(139, 92, 246, 0.5); color: #fff; background: rgba(139, 92, 246, 0.12); }
+.ins-pill.active { border-color: rgba(139, 92, 246, 0.7); background: linear-gradient(135deg, rgba(139, 92, 246, 0.35), rgba(59, 130, 246, 0.2)); color: #fff; box-shadow: 0 0 18px rgba(139, 92, 246, 0.35); }
+.ins-card { background: linear-gradient(180deg, rgba(20, 18, 36, 0.85) 0%, rgba(11, 10, 20, 0.92) 100%); border: 1px solid rgba(255, 255, 255, 0.09); border-radius: 18px; overflow: hidden; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease; }
+.ins-card:hover { transform: translateY(-6px); border-color: rgba(167, 139, 250, 0.55); box-shadow: 0 18px 40px -12px rgba(124, 58, 237, 0.28), 0 0 25px rgba(139, 92, 246, 0.18); }
+.ins-card .ins-thumb { overflow: hidden; position: relative; }
+.ins-card .ins-thumb img { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); width: 100%; height: 100%; object-fit: cover; display: block; }
+.ins-card:hover .ins-thumb img { transform: scale(1.08); }
+.ins-tag { position: absolute; top: 12px; left: 12px; padding: 4px 10px; border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: rgba(5, 5, 10, 0.65); border: 1px solid rgba(255, 255, 255, 0.18); backdrop-filter: blur(8px); color: #fff; }
+.ins-featured { background: linear-gradient(135deg, rgba(30, 27, 75, 0.55) 0%, rgba(12, 13, 28, 0.95) 100%); border: 1px solid rgba(167, 139, 250, 0.45); border-radius: 24px; overflow: hidden; box-shadow: 0 0 40px -8px rgba(139, 92, 246, 0.3); transition: box-shadow 0.4s ease, transform 0.4s ease; }
+.ins-featured:hover { box-shadow: 0 0 60px -8px rgba(139, 92, 246, 0.45); transform: translateY(-3px); }
+.ins-newsletter { background: linear-gradient(135deg, rgba(139, 92, 246, 0.18) 0%, rgba(59, 130, 246, 0.12) 100%); border: 1px solid rgba(139, 92, 246, 0.35); border-radius: 24px; backdrop-filter: blur(12px); }
+.ins-input { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 999px; color: #fff; padding: 12px 20px; width: 100%; outline: none; transition: border-color 0.25s ease, box-shadow 0.25s ease; }
+.ins-input::placeholder { color: rgba(255, 255, 255, 0.4); }
+.ins-input:focus { border-color: rgba(139, 92, 246, 0.7); box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.18); }
+.ins-reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.ins-reveal.visible { opacity: 1; transform: translateY(0); }
+.ins-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.4), transparent); }
+.ins-readmore { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #a78bfa; transition: gap 0.25s ease, color 0.25s ease; }
+.ins-card:hover .ins-readmore, .ins-featured:hover .ins-readmore { gap: 10px; color: #c4b5fd; }
+.ins-blob { position: absolute; border-radius: 50%; filter: blur(90px); pointer-events: none; z-index: 0; }
+.btn-neon { background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); box-shadow: 0 4px 22px -2px rgba(139, 92, 246, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3); transition: all 0.25s ease; }
+.btn-neon:hover { background: linear-gradient(135deg, #9f75ff 0%, #7c3aed 100%); box-shadow: 0 6px 28px 0px rgba(139, 92, 246, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.45); transform: translateY(-1px); }
