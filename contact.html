@@ -14,8 +14,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
         rel="stylesheet" />
-    
-    
+
+
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -35,7 +35,7 @@
             }
         };
     </script>
-    
+
 </head>
 
 <body class="bg-obsidian text-slate-100 selection:bg-purple-500 selection:text-white relative">
@@ -79,12 +79,12 @@
     <!-- Mobile menu -->
     <div id="mobile-menu" class="mobile-menu">
         <nav class="mobile-nav">
+            <a href="index.html" target="_parent">Home</a>
             <a href="features.html" target="_parent">Features</a>
             <a href="solution.html" target="_parent">Solutions</a>
             <a href="service.html" target="_parent">Services</a>
             <a href="insights.html" target="_parent">Insights</a>
-            <a href="contact.html" target="_parent">Contact</a>
-            <a href="#contact-form">Start a project</a>
+            <a href="contact.html">Start a project</a>
         </nav>
     </div>
 
@@ -271,87 +271,102 @@
                             </p>
                         </div>
 
-                        <form id="contactForm" novalidate>
-                            <!-- Name + Email row -->
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                        <form action="#" method="POST"
+                            class="contact-form rounded-3xl border border-[var(--border-primary)] bg-white/5 p-5 shadow-2xl backdrop-blur-xl sm:p-8">
+                            <div class="space-y-5">
+
+                                <!-- Full Name -->
                                 <div>
-                                    <label class="cnt-label" for="firstName">First Name *</label>
-                                    <input type="text" id="firstName" name="firstName" class="cnt-input"
-                                        placeholder="John" required />
+                                    <label for="full-name" class="mb-2 block text-sm font-medium text-white">
+                                        Full Name<span class="text-cyan">*</span>
+                                    </label>
+                                    <input type="text" id="full-name" name="full_name" required autocomplete="name"
+                                        placeholder="Enter your full name" class="h-12 w-full rounded-[8px] border border-[var(--border-primary)] bg-white/5 px-4 text-sm text-white
+                           outline-none transition-all duration-300 placeholder:text-white/30
+                           focus:border-violet focus:bg-white/10 focus:ring-4 focus:ring-violet/20" />
                                 </div>
+
+                                <!-- Business Email -->
                                 <div>
-                                    <label class="cnt-label" for="lastName">Last Name</label>
-                                    <input type="text" id="lastName" name="lastName" class="cnt-input"
-                                        placeholder="Doe" />
+                                    <label for="business-email" class="mb-2 block text-sm font-medium text-white">
+                                        Business Email<span class="text-cyan">*</span>
+                                    </label>
+                                    <input type="email" id="business-email" name="business_email" required
+                                        autocomplete="email" placeholder="name@company.com" class="h-12 w-full rounded-[8px] border border-[var(--border-primary)] bg-white/5 px-4 text-sm text-white
+                           outline-none transition-all duration-300 placeholder:text-white/30
+                           focus:border-violet focus:bg-white/10 focus:ring-4 focus:ring-violet/20" />
                                 </div>
-                            </div>
 
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                                <!-- Company Name -->
                                 <div>
-                                    <label class="cnt-label" for="email">Email Address *</label>
-                                    <input type="email" id="email" name="email" class="cnt-input"
-                                        placeholder="john@company.com" required />
+                                    <label for="company-name" class="mb-2 block text-sm font-medium text-white">
+                                        Company Name<span class="text-cyan">*</span>
+                                    </label>
+                                    <input type="text" id="company-name" name="company_name" required
+                                        autocomplete="organization" placeholder="Enter company name" class="h-12 w-full rounded-[8px] border border-[var(--border-primary)] bg-white/5 px-4 text-sm text-white
+                           outline-none transition-all duration-300 placeholder:text-white/30
+                           focus:border-violet focus:bg-white/10 focus:ring-4 focus:ring-violet/20" />
                                 </div>
+
+                                <!-- Phone Number -->
                                 <div>
-                                    <label class="cnt-label" for="phone">Phone Number</label>
-                                    <input type="tel" id="phone" name="phone" class="cnt-input"
-                                        placeholder="+1 (555) 000-0000" />
+                                    <label for="phone-number" class="mb-2 block text-sm font-medium text-white">
+                                        Phone Number<span class="text-cyan">*</span>
+                                    </label>
+                                    <div class="grid grid-cols-1 gap-3 sm:grid-cols-[150px_1fr]">
+                                        <select id="country-code" name="country_code" required class="h-12 w-full cursor-pointer rounded-[8px] border border-[var(--border-primary)] bg-white/5 px-4
+                             text-sm text-white outline-none transition-all duration-300
+                             focus:border-violet focus:ring-4 focus:ring-violet/20">
+                                            <option class="text-ink" value="+91">India +91</option>
+                                            <option class="text-ink" value="+1">US +1</option>
+                                            <option class="text-ink" value="+44">UK +44</option>
+                                            <option class="text-ink" value="+971">UAE +971</option>
+                                            <option class="text-ink" value="+61">Australia +61</option>
+                                        </select>
+                                        <input type="tel" id="phone-number" name="phone_number" required inputmode="tel"
+                                            autocomplete="tel" placeholder="Enter phone number"
+                                            pattern="[0-9\s()+-]{7,18}" class="h-12 w-full rounded-[8px] border border-[var(--border-primary)] bg-white/5 px-4 text-sm text-white
+                             outline-none transition-all duration-300 placeholder:text-white/30
+                             focus:border-violet focus:bg-white/10 focus:ring-4 focus:ring-violet/20" />
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="mb-5">
-                                <label class="cnt-label" for="company">Company / Organisation</label>
-                                <input type="text" id="company" name="company" class="cnt-input"
-                                    placeholder="Your company name" />
-                            </div>
+                                <!-- Message -->
+                                <div>
+                                    <label for="message" class="mb-2 block text-sm font-medium text-white">
+                                        Your Message<span class="text-cyan">*</span>
+                                    </label>
+                                    <textarea id="message" name="message" rows="4" required
+                                        placeholder="Write your message..." class="w-full resize-y rounded-[8px] border border-[var(--border-primary)] bg-white/5 px-4 py-3 text-sm text-white
+                           outline-none transition-all duration-300 placeholder:text-white/30
+                           focus:border-violet focus:bg-white/10 focus:ring-4 focus:ring-violet/20"></textarea>
+                                </div>
 
-                            <div class="mb-5">
-                                <label class="cnt-label" for="service">Service Interested In *</label>
-                                <select id="service" name="service" class="cnt-input" required>
-                                    <option value="" disabled selected>Select a service…</option>
-                                    <option value="ai-consulting">AI Consulting</option>
-                                    <option value="rag">RAG Solutions</option>
-                                    <option value="analytics">AI Powered Analytics</option>
-                                    <option value="agents">AI Agents</option>
-                                    <option value="voice">AI Voice Agents</option>
-                                    <option value="automation">Workflow Automation</option>
-                                    <option value="other">Other / Not Sure Yet</option>
-                                </select>
-                            </div>
+                                <!-- Consent -->
+                                <div class="flex items-start gap-3">
+                                    <input type="checkbox" id="consent" name="consent" required
+                                        class="mt-1 h-4 w-4 cursor-pointer rounded border-white/20 bg-white/5 accent-violet" />
+                                    <label for="consent" class="cursor-pointer text-xs leading-5 text-white/50">
+                                        I consent to the processing of my personal data for marketing purposes,
+                                        including
+                                        receiving newsletters, marketing calls and SMS messages.
+                                    </label>
+                                </div>
 
-                            <div class="mb-5">
-                                <label class="cnt-label" for="budget">Estimated Budget</label>
-                                <select id="budget" name="budget" class="cnt-input">
-                                    <option value="" disabled selected>Select a range…</option>
-                                    <option value="<5k">Under \$5,000</option>
-                                    <option value="5-15k">\$5,000 – \$15,000</option>
-                                    <option value="15-50k">\$15,000 – \$50,000</option>
-                                    <option value="50k+">Above \$50,000</option>
-                                    <option value="undecided">Not decided yet</option>
-                                </select>
-                            </div>
+                                <!-- Submit — 8px radius, border matches input style -->
+                                <button type="submit" class="group flex h-14 w-full items-center justify-center gap-3 rounded-[8px]
+                         border border-[var(--border-primary)] bg-gradient-to-r from-violet to-blue text-white
+                         font-semibold transition-all duration-300 hover:opacity-90">
+                                    <span>Submit</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M7 17L17 7M17 7H8M17 7V16" />
+                                    </svg>
+                                </button>
 
-                            <div class="mb-7">
-                                <label class="cnt-label" for="message">Your Message *</label>
-                                <textarea id="message" name="message" rows="5" class="cnt-input resize-none"
-                                    placeholder="Tell us about your project, goals, timeline, or any questions you have…"
-                                    required></textarea>
                             </div>
-
-                            <!-- Error message -->
-                            <div id="formError"
-                                class="hidden mb-4 px-4 py-3 rounded-lg text-sm text-red-300 bg-red-500/10 border border-red-500/25">
-                                Please fill in all required fields before submitting.
-                            </div>
-
-                            <button type="submit" class="btn-submit">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="22" y1="2" x2="11" y2="13" />
-                                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
-                                </svg>
-                                Send Message
-                            </button>
                         </form>
 
                         <!-- Success state -->
